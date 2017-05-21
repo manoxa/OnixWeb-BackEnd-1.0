@@ -1,0 +1,99 @@
+a {
+  color: #00B7FF;
+}
+
+input[type="checkbox"]{
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+.form-horizontal .control-label {
+    text-align: -webkit-left;
+    margin-bottom: 0;
+    padding-top: 11px;
+}    
+
+#waintingModal{
+    margin-top: 100px;
+}
+
+#imagem-vetor{
+    margin-top: 20px;
+}
+
+#divCadastro{
+    margin-top: 22px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    border: 1px solid;
+    border-color:#cccccc;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;    
+}
+
+#divLogin{
+    margin-top: 22px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    border: 1px solid;
+    border-color:#cccccc;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#img-load{
+    margin-top: -5px;
+    max-width:32px;
+    max-height:32px;
+    width: auto;
+    height: auto; 
+}
+
+.logo{
+    margin-top: -5px;
+    max-width:120px;
+    max-height:50px;
+    width: auto;
+    height: auto;
+}
+
+.container{
+	margin-top:65px;
+    width: 95%;
+}
+
+.navbar-header {
+    margin-bottom: 10px;
+}
+
+.navbar-brand {
+    
+}
+
+.navbar-fixed-top{
+    border-color:#000000;
+    border-bottom-color:#696969;
+    border-bottom-width: 4px; 
+    background-color:#000000;
+}
+
+.navbar-toggle collapsed{
+    border-color:#000000;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #000000;
+}
+
+
+.navbar-inverse .navbar-toggle:hover {
+    background-color: #696969;
+}
+
+.sr-only{
+   background-color: #696969;
+}
