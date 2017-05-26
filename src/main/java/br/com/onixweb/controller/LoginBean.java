@@ -43,15 +43,6 @@ public class LoginBean implements Serializable {
 	public void login() throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/Login.xhtml");
 		dispatcher.forward(request, response);
-		
-		try {
-			
-			Map<String, String> map = BuildMapRequst.buildQueryMap(request);
-			
-		} catch (Exception e) {
-			
-		}
-		
 		facesContext.responseComplete();
 	}
 	

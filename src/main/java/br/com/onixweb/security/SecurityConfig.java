@@ -33,11 +33,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			
 		.authorizeRequests()
 			.antMatchers("/Login.xhtml", "/Erro.xhtml", "/javax.faces.resource/**").permitAll()
-			.antMatchers("/Home.xhtml","/AcessoNegado.xhtml").authenticated()
-			.antMatchers("/**","/admin/**").hasRole("ADMINISTRADOR")
-			.antMatchers("/mCalculo/**").hasRole("MEMORIA_DE_CALCULO")
-			.antMatchers("/uMedida/**").hasRole("UNIDADE_DE_MEDIDA")
-			.antMatchers("/fbo/**").hasRole("FBO")
+			.antMatchers("/Home.xhtml","/AcessoNegado.xhtml","/user/**").authenticated()
+			.antMatchers("/admin/**", "/user/**").hasRole("ADIMINISTRADOR")
+			.antMatchers("/user/mCalculo/**").hasRole("MEMORIA_DE_CALCULO")
+			.antMatchers("/user/uMedida/**").hasRole("UNIDADE_DE_MEDIDA")
+			.antMatchers("/user/fbo/**").hasRole("FBO")
 			.and()
 		
 		.formLogin()

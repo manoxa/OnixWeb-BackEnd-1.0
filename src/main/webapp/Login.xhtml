@@ -1,41 +1,108 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Login</title>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<h:title></h:title>
 
-		<h:outputStylesheet library="css" name="sistema.css" />
-	</h:head>
-	<h:body>
-		<f:metadata>
-			<f:viewParam name="dummy" />
-			<f:event listener="#{loginBean.preRender}" type="preRenderView" />
-		</f:metadata>
-
-		<div id="login-dialog">
-			<h1>Login</h1>
-
-			<h:form id="frm" prependId="false">
-
-				<p:messages id="messages" autoUpdate="true" closable="true" />
-
-				<h:panelGrid columns="2" styleClass="grid-login">
-					<p:outputLabel value="Usuario" />
-					<p:inputText size="30" id="username" value="#{loginBean.username}" />
-
-					<p:outputLabel value="Senha" />
-					<p:password size="30" id="password" />
-
-					<h:panelGroup />
-					<p:commandButton value="Login" action="#{loginBean.login}"
-						ajax="false" />
-				</h:panelGrid>
-			</h:form>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<!--h:outputStylesheet library="css" name="sistema.css" /-->
+	<h:outputScript library="js" name="main.js" />
+</h:head>
+<h:body>
+	<f:metadata>
+		<f:viewParam name="dummy" />
+		<f:event listener="#{loginBean.preRender}" type="preRenderView" />
+	</f:metadata>
+	<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<a href="/login" class="navbar-brand insetText"> <h:graphicImage
+					library="imagens" name="logo4.png" styleClass="logo" />
+			</a>
+			<div class="navbar-header">
+				<button data-toggle="collapse" data-target="#menu-navegacao"
+					aria-expanded="false" class="navbar-toggle">
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div id="menu-navegacao" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					
+				</ul>
+			</div>
 		</div>
-	</h:body>
+	</nav>
+	<div class="page-header">
+		<h3>
+			ASA - Solutions <small> Sistema de Operações Áereas. </small>
+		</h3>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h:graphicImage library="imagens" name="mundi_vetor.jpg"
+					class="img-responsive img-rounded" id="imagem-vetor" />
+			</div>
+			<div class="col-md-3">
+				<div id="login-dialog">
+				<h1>Login</h1>
+					<h:form id="frm" prependId="false">
+						<p:messages id="messages" autoUpdate="true" closable="true" />
+						<p:panelGrid columns="2" styleClass="grid-login ">
+							<p:outputLabel value="Usuario" />
+							<p:inputText id="username" value="#{loginBean.username}" />
+
+							<p:outputLabel value="Senha" />
+							<p:password id="password" />
+
+							<h:panelGroup />
+							<p:commandButton value="Login" action="#{loginBean.login}"
+								ajax="false" />
+						</p:panelGrid>
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="searchModal" class="modal">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="waintingModal" data-backdrop="static">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content">
+					<div class="container"></div>
+					<div class="modal-body">
+						<div
+							style="font-family: Verdana, Geneva, sans-serif; font-size: 80%; height: 20px; position: relative;">
+							<p id="loadingImg"
+								style="margin: 0; position: absolute; top: -30px; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)">
+								<h:graphicImage library="imagens" name="busy.gif" id="img-load" />
+							</p>
+							<p id="loadingText"
+								style="margin: 0; position: absolute; top: 5px; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)">Loading</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h:outputScript library="js" value="jquery.min.js" />
+	<h:outputScript library="js" value="bootstrap.min.js" />
+</h:body>
 </html>

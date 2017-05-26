@@ -52,6 +52,11 @@ input[type="checkbox"]{
     width: auto;
     height: auto; 
 }
+.page-header{
+    padding-bottom: 9.5px;
+    margin: 80px 0 21px;
+    border-bottom: 1px solid #e6e6e6;
+}
 
 .logo{
     margin-top: -5px;
