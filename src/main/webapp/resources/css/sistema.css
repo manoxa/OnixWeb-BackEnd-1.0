@@ -112,14 +112,23 @@ h1 {
 /* Customiza TabView - fim */
 
 /* Menu sistema inicio */
+
 .menu-sistema {
     border: 0px !important;
     padding: 0px !important;
-    background: none !important;
+    background: #000000 !important;
+}
+
+#divForm{
+    float: right;
+    width: auto;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 15px;
 }
 
 .menu-sistema .ui-menu-parent > a .ui-menuitem-text, .menu-sistema > .ui-menu-list > .ui-menuitem > a > .ui-menuitem-text {
-    color: #fff !important;
+   color: #ffffff !important;
 }
 
 .menu-sistema .ui-icon-triangle-1-s {
@@ -130,3 +139,12 @@ h1 {
 .ui-state-disabled {
 	opacity: .80 !important;
 }
+
+.ui-menu .ui-menuitem {
+    margin: 1px 5px !important;
+}
+
+.ui-menu .ui-menu-parent .ui-menu-child {
+    padding-right: 10px !important;
+}
+

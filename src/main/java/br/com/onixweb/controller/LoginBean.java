@@ -2,7 +2,6 @@ package br.com.onixweb.controller;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.Map;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -13,7 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.onixweb.util.BuildMapRequst;
 import br.com.onixweb.util.jsf.FacesUtil;
 
 

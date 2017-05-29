@@ -21,18 +21,6 @@ input[type="checkbox"]{
     margin-top: 20px;
 }
 
-#divCadastro{
-    margin-top: 22px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 30px;
-    border: 1px solid;
-    border-color:#cccccc;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;    
-}
-
 #divLogin{
     margin-top: 22px;
     padding-left: 40px;
@@ -52,10 +40,9 @@ input[type="checkbox"]{
     width: auto;
     height: auto; 
 }
+
 .page-header{
-    padding-bottom: 9.5px;
-    margin: 80px 0 21px;
-    border-bottom: 1px solid #e6e6e6;
+   
 }
 
 .logo{
@@ -67,7 +54,7 @@ input[type="checkbox"]{
 }
 
 .container{
-	margin-top:65px;
+	margin-top:60px;
     width: 95%;
 }
 

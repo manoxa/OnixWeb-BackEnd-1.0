@@ -6,15 +6,19 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
 
 @Named
 @RequestScoped
 public class Seguranca {
 
+private String permissao;
+
 /*	@Inject
 	private ExternalContext externalContext;*/
 	
 	public String getNomeUsuario() {
+		
 		String nome = null;
 		
 		UsuarioSistema usuarioLogado = getUsuarioLogado();
@@ -24,6 +28,21 @@ public class Seguranca {
 		}
 		
 		return nome;
+	}
+	
+	
+	public String permissaoUsuario(){
+		
+		UsuarioSistema usuarioLogado = getUsuarioLogado();
+		
+		for(GrantedAuthority guAuthority : usuarioLogado.getAuthorities()){
+			
+			this.permissao = guAuthority.getAuthority();
+			System.out.println("Permissão: " + permissao);
+		
+		}
+	
+		return permissao;
 	}
 
 	@Produces

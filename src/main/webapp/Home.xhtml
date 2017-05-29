@@ -1,27 +1,101 @@
-<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-      
-      <ui:define name="titulo">Bem Vindo</ui:define>
-      
-      <ui:define name="corpo">
-      
-	      <h1>Bem Vindo!</h1>
-	      
-	      <p:link value="Memoria de Calculo - admin" href="/admin/mCalculo/admin-mCalculo.xhtml"/>	<br />
-	      <p:link value="Unidade de Madida - admin" href="/admin/uMedida/admin-uMedida.xhtml"/>	<br />
-	      <p:link value="FBO - admin" href="/admin/fbo/admin-fbo.xhtml"/>	<br />
-	      
-	      <hr />
-	     
-		  <p:link value="Memoria de Calculo" href="/user/mCalculo/mCalculo.xhtml"/>	<br />
-		  <p:link value="Unidade de Medida" href="/user/uMedida/uMedida.xhtml"/><br />
-		  <p:link value="FBO" href="/user/fbo/fbo.xhtml"/><br />
-		  <p:link value="Sair" href="/logout"/>
-	  
-	  </ui:define>
-	  
-</ui:composition>
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<h:title></h:title>
+
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="sistema.css" />
+	<h:outputScript library="js" name="main.js" />
+</h:head>
+<h:body>
+	<f:metadata>
+		<f:viewParam name="dummy" />
+		<f:event listener="#{loginBean.preRender}" type="preRenderView" />
+	</f:metadata>
+	<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<a href="/OnixWeb-1.0/Home.xhtml" class="navbar-brand insetText">
+				<h:graphicImage library="imagens" name="logo4.png" styleClass="logo" />
+			</a>
+			<div id="divForm">
+				<h:form style="display: inline-block">
+					<p:menubar styleClass="menu-sistema">
+						<p:submenu label="Cadastros">
+							<p:menuitem value="Usuarios" />
+							<p:menuitem value="Empresas" />
+							<p:separator />
+							<p:menuitem value="Tarifas" />
+							<p:menuitem value="Serviços" />
+						</p:submenu>
+						<p:submenu label="Unidade de Medida">
+							<p:menuitem value="Nova Unidade" />
+							<p:menuitem value="Pesquisa" />
+						</p:submenu>
+						<p:submenu label="Memória de Cálculo">
+							<p:menuitem value="Novo Calculo" />
+							<p:menuitem value="Pesquisa" />
+						</p:submenu>
+						<p:submenu label="Relatórios">
+							<p:menuitem value="Memória de Calculo" />
+							<p:menuitem value="Unidade de medida" />
+							<p:menuitem value="FBO" />
+						</p:submenu>
+						<p:menuitem value="Sair" url="/logout" />
+					</p:menubar>
+				</h:form>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="page-header">
+			<h3>
+				ASA - Solutions <small> Bem Vindo #{seguranca.nomeUsuario}!</small>
+			</h3>
+		</div>
+		<div class="row">
+			<div class="col-md-8"></div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+	<div id="searchModal" class="modal">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="waintingModal" data-backdrop="static">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content">
+					<div class="container"></div>
+					<div class="modal-body">
+						<div
+							style="font-family: Verdana, Geneva, sans-serif; font-size: 80%; height: 20px; position: relative;">
+							<p id="loadingImg"
+								style="margin: 0; position: absolute; top: -30px; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)">
+								<h:graphicImage library="imagens" name="busy.gif" id="img-load" />
+							</p>
+							<p id="loadingText"
+								style="margin: 0; position: absolute; top: 5px; left: 50%; margin-right: -50%; transform: translate(-50%, -50%)">Loading</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h:outputScript library="js" value="jquery.min.js" />
+	<h:outputScript library="js" value="bootstrap.min.js" />
+</h:body>
+</html>
