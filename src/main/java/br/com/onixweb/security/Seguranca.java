@@ -38,7 +38,7 @@ private String permissao;
 		for(GrantedAuthority guAuthority : usuarioLogado.getAuthorities()){
 			
 			this.permissao = guAuthority.getAuthority();
-			System.out.println("Permissão: " + permissao);
+			System.out.println("Permissão    : " + permissao);
 		
 		}
 	
