@@ -31,18 +31,41 @@ private String permissao;
 	}
 	
 	
-	public String permissaoUsuario(){
+	public String getPermissaoUsuario(){
 		
 		UsuarioSistema usuarioLogado = getUsuarioLogado();
 		
 		for(GrantedAuthority guAuthority : usuarioLogado.getAuthorities()){
 			
-			this.permissao = guAuthority.getAuthority();
-			System.out.println("Permissão    : " + permissao);
+			if("ROLE_ADIMINISTRADOR".equalsIgnoreCase(guAuthority.getAuthority())){
+				this.permissao = guAuthority.getAuthority();
+				System.out.println("Permissão    : " + permissao);
+				
+				return permissao;
+				
+			}else if("ROLE_MEMORIA_DE_CALCULO".equalsIgnoreCase(guAuthority.getAuthority())){
+				this.permissao = guAuthority.getAuthority();
+				System.out.println("Permissão    : " + permissao);
+				
+				return permissao;
+				
+			}else if("ROLE_UNIDADE_DE_MEDIDA".equalsIgnoreCase(guAuthority.getAuthority())){
+				this.permissao = guAuthority.getAuthority();
+				System.out.println("Permissão    : " + permissao);
+				
+				return permissao;	
+				
+			}else if("ROLE_FBO".equalsIgnoreCase(guAuthority.getAuthority())){
+				this.permissao = guAuthority.getAuthority();
+				System.out.println("Permissão    : " + permissao);
+				
+				return permissao;					
+			}
 		
 		}
-	
+		
 		return permissao;
+	
 	}
 
 	@Produces

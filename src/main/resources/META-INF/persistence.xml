@@ -2,7 +2,8 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="OnixPU" transaction-type="JTA">
+
+	<!-- persistence-unit name="OnixPU" transaction-type="JTA">
 		<description>Forge Persistence Unit</description>
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:/jboss/datasource/OnixDS</jta-data-source>
@@ -15,5 +16,21 @@
 				value="true" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 		</properties>
+	<persistence-unit name=""></persistence-unit -->
+	
+		<persistence-unit name="OpenshiftPU">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://onixweb-db/onix_web_db" />
+			<property name="javax.persistence.jdbc.user" value="amrodrigues" />
+			<property name="javax.persistence.jdbc.password" value="marquesdba" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			
+		</properties>
 	</persistence-unit>
+
 </persistence>
