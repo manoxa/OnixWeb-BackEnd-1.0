@@ -1,2 +1,6 @@
 # Package Files #
 target
+.settings
+.classpath
+.project
+.tern-project
