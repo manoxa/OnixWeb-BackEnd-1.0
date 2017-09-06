@@ -28,6 +28,8 @@ public class Usuario implements Serializable {
 	private Long id;
 	@Column(nullable = false, length = 80)
 	private String nome;
+	@Column(nullable = false, length = 80)
+	private String email;
 	@Column(nullable = false, unique = true, length = 255)
 	private String usuario;
 	@Column(nullable = false, length = 20)
@@ -50,6 +52,14 @@ public class Usuario implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getUsuario() {

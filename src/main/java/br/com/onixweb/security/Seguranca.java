@@ -20,7 +20,6 @@ private String permissao;
 	public String getNomeUsuario() {
 		
 		String nome = null;
-		
 		UsuarioSistema usuarioLogado = getUsuarioLogado();
 		
 		if (usuarioLogado != null) {
@@ -28,6 +27,18 @@ private String permissao;
 		}
 		
 		return nome;
+	}
+	
+	public String getEmailUsuario() {
+		
+		String email = null;
+		UsuarioSistema usuarioSistema = getUsuarioLogado();
+		
+		if(usuarioSistema != null) {
+			email = usuarioSistema.getUsuario().getEmail();
+		}
+		
+		return email;
 	}
 	
 	

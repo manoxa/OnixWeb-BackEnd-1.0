@@ -6,7 +6,7 @@
 	<!-- persistence-unit name="OnixPU" transaction-type="JTA">
 		<description>Forge Persistence Unit</description>
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:/jboss/datasource/OnixDS</jta-data-source>
+		<jta-data-source>java:/jboss/datasource/VivoDS</jta-data-source>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update" />
@@ -16,20 +16,20 @@
 				value="true" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 		</properties>
-	<persistence-unit name=""></persistence-unit -->
-	
-		<persistence-unit name="OpenshiftPU">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://onixweb-db/onix_web_db" />
-			<property name="javax.persistence.jdbc.user" value="amrodrigues" />
-			<property name="javax.persistence.jdbc.password" value="marquesdba" />
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+	</persistence-unit -->
 
+	<persistence-unit name="OnixPU" transaction-type="JTA">
+		<description>Forge Persistence Unit</description>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:/jboss/datasource/OnixAWSDS</jta-data-source>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
-			
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.transaction.flush_before_completion"
+				value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 		</properties>
 	</persistence-unit>
 
